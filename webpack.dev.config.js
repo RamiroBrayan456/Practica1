@@ -1,18 +1,33 @@
+
 const path = require('path');
+
+const MiniCssExtractPlugin =
+  require('mini-css-extract-plugin');
+
 module.exports = {
-  mode: 'production',
-  
+
   entry: "./client/index.js",
-  
+
   output: {
-    
+
     path: path.resolve(__dirname, "public"),
     
-    filename: "bundle.js"
+    filename: "bundle.js",
+    
+    publicPath: '/'
   },
   
-  module : {
-   rules: [
+  devServer: {
+    
+    static: path.join(__dirname, "public"),
+    
+    port: 3000,
+    
+    host: "localhost"
+  },
+
+  module: {
+    rules: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -40,5 +55,10 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader,'css-loader']
       }
     ]
-   }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'stylesheet/app.css'
+    })
+  ]
 }

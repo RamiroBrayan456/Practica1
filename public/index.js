@@ -7,6 +7,6 @@
     <title>Webpack</title>
 </head>
 <body>
-    <script src="./bundler.js"></script>
+    <script src="/bundler.js"></script>
 </body>
 </html>
