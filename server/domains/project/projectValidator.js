@@ -1,4 +1,4 @@
-// Importando biblioteca de validacion
+// Importando biblioteca de validacion RM
 import * as Yup from 'yup';
 
 // Creando un esquema de validación para el proyecto

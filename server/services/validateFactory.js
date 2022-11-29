@@ -1,5 +1,5 @@
 // Usando el patrón Factory para la creación de un middelware de validación
-// lo que sigue es una función que regresa una función
+// lo que sigue es una función que regresa una función RM
 const Validator =
   ({ schema, getObject }) =>
   async (req, _, next) => {
